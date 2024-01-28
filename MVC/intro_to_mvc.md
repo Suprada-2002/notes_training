@@ -12,17 +12,26 @@
 - they are created from model data.
 - handles & responds to user input and interaction
 ```
-- make a sub-folder under Views folder and make .aspx files
+- make a sub-folder under Views folder and make .cshtml files
 
 path for HomeController.Index() action:
-\Views\Home\Index.aspx
+\Views\Home\Index.cshtml
 
 path for HomeController.About() action:
-\Views\Home\About.aspx
+\Views\Home\About.cshtml
 ```
+- as we are returning a view from the index action method of the home controller, by default the MVC framework will look for a file with the name Index.aspx/Index.ascx within Home/Shared folder of the application if the view engine is APSX. if not found it will search for a view file with the name Index.cshtml/Index.vbhtml within the Home/Shared folder
 
 ## 3. Controller
 - are components that handle user interaction, work with the model and ultimately select a view to render that displays UI
+```
+client  -><-   controller -> view, model
+- the model does not interact with views
+```
+- the heart of the application
+- contains a set of public methods called action which handle the incoming HTTP Requests. 
+- while processing a request, it works with the model, then it selects a view and if needed passes the model object to view.
+
 
 ## Advantages of MVC
 1. mvc pattern helps create different aspects of the application while providing a loose coupling between these elements.
