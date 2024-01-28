@@ -36,6 +36,15 @@ public dynamic ViewBag {get; }
 4. both are rarely used
 
 ### 3. Temp Data
+- the limitation of both ViewData & ViewBag is that they are limited to one HTTP request only, so if redirection occurs then their values become null means they will loose the data they hold.
+- to pass data from one HTTP Request to the next subsequent HTTP request, Tempdata is used in this scenario.
+- it is a mechanism to pass a small amount of temporary data from a controller action method to view as well as from a controller action method to another action method
+- TempData value becomes null once the subsequent request is completed by default.
+```
+public TempDataDictionary TempData{ get; set; }
+
+public class TempDataDictionary : IDictionary <string, object>
+```
 
 ## Strongly typed views
 - the best way to transfer data is to use a strongly typed model as it provides compile-time error checking as well as intelligence support
