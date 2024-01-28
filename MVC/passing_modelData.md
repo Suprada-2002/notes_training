@@ -39,3 +39,6 @@ public dynamic ViewBag {get; }
 
 ## Strongly typed views
 - the best way to transfer data is to use a strongly typed model as it provides compile-time error checking as well as intelligence support
+
+### View Model
+- it is a model which contains more than one model data required for a particular view.
