@@ -6,6 +6,7 @@
 ## 1. Model
 - parts of the application that implement the logic for the application's data domain.
 - retrieve and store model state in the database.
+- represent business data/domain data as well as logic to manage the business data
 
 ## 2. View
 - views are the components that display the application's UI
@@ -21,6 +22,28 @@ path for HomeController.About() action:
 \Views\Home\About.cshtml
 ```
 - as we are returning a view from the index action method of the home controller, by default the MVC framework will look for a file with the name Index.aspx/Index.ascx within Home/Shared folder of the application if the view engine is APSX. if not found it will search for a view file with the name Index.cshtml/Index.vbhtml within the Home/Shared folder
+
+## Razor Syntax 
+- it is a markup syntax for embedding .NET-based code into webpages.
+- it consists of Razor markup, c# , html.
+- files containing razor have a .cshtml file extension
+
+- its default language is HTML and supports @ keyword transition from HTML to c#.
+- it evaluates c# expressions and renders them in HTML output
+```
+<p> @@username </p> : to escape @ symbol in razor markup
+```
+
+### Razor code blocks
+- code inside blocks are not rendered
+```
+@{
+
+var quote = "having a good day";
+
+}
+<p>@quote</p>
+```
 
 ## 3. Controller
 - are components that handle user interaction, work with the model and ultimately select a view to render that displays UI
